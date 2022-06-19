@@ -20,7 +20,7 @@ export function renderToHtml(lines: IThemedToken[][], options: HtmlRendererOptio
     const lineOptions = optionsByLineNumber.get(lineNumber) ?? []
     const lineClasses = getLineClasses(lineOptions).join(' ')
 
-    html += `<span class="${lineClasses}">`
+    html += `<span class="${lineClasses}"><span class="number" style="background-color: ${options.fg}">${lineNumber}</span>`
 
     l.forEach(token => {
       const cssDeclarations = [`color: ${token.color || options.fg}`]
